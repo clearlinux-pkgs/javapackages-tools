@@ -18,9 +18,19 @@ BuildRequires : util-linux
 BuildRequires : libxslt-bin
 BuildRequires : docbook-xml
 BuildRequires : dia
+Requires : javapackages-tools-bin
 
 %description
 Very short description since we have nothing to say.
+
+
+%package bin
+Summary: bin components for the javapackages-tools package.
+Group: Binaries
+
+%description bin
+bin components for the javapackages-tools package.
+
 
 %prep
 %setup -q -n javapackages-4.7.0
@@ -38,8 +48,8 @@ pushd python
   python3 setup.py install -O1 --skip-build --root %{buildroot}
 popd
 
-%files
-%defattr(-,root,root,-)
+%files bin
+%defattr(755,root,root,-)
 /usr/bin/abs2rel
 /usr/bin/build-classpath
 /usr/bin/build-classpath-directory
@@ -54,6 +64,9 @@ popd
 /usr/bin/rebuild-jar-repository
 /usr/bin/shade-jar
 /usr/bin/xmvn-builddep
+
+%files
+%defattr(-,root,root,-)
 /usr/lib/python3.5/site-packages/javapackages-4.7.0-py3.5.egg-info/PKG-INFO
 /usr/lib/python3.5/site-packages/javapackages-4.7.0-py3.5.egg-info/SOURCES.txt
 /usr/lib/python3.5/site-packages/javapackages-4.7.0-py3.5.egg-info/dependency_links.txt
