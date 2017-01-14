@@ -1,6 +1,6 @@
 Name     : javapackages-tools
 Version  : 4.7.0
-Release  : 7
+Release  : 8
 URL      : https://fedorahosted.org/released/javapackages/javapackages-4.7.0.tar.xz
 Source0  : https://fedorahosted.org/released/javapackages/javapackages-4.7.0.tar.xz
 Summary  : Simple Maven project
@@ -47,6 +47,7 @@ rm -rf %{buildroot}
 pushd python
   python3 setup.py install -O1 --skip-build --root %{buildroot}
 popd
+chmod a+x %{buildroot}/usr/lib/rpm/*
 
 %files bin
 %defattr(755,root,root,-)
