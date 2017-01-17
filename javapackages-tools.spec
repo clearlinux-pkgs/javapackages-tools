@@ -1,6 +1,6 @@
 Name     : javapackages-tools
 Version  : 4.7.0
-Release  : 8
+Release  : 9
 URL      : https://fedorahosted.org/released/javapackages/javapackages-4.7.0.tar.xz
 Source0  : https://fedorahosted.org/released/javapackages/javapackages-4.7.0.tar.xz
 Summary  : Simple Maven project
@@ -20,6 +20,8 @@ BuildRequires : docbook-xml
 BuildRequires : dia
 Requires : javapackages-tools-bin
 
+Patch1: timestamp.patch
+
 %description
 Very short description since we have nothing to say.
 
@@ -34,6 +36,7 @@ bin components for the javapackages-tools package.
 
 %prep
 %setup -q -n javapackages-4.7.0
+%patch1 -p1
 
 %build
 export LANG=C
@@ -47,7 +50,8 @@ rm -rf %{buildroot}
 pushd python
   python3 setup.py install -O1 --skip-build --root %{buildroot}
 popd
-chmod a+x %{buildroot}/usr/lib/rpm/*
+# fixme: this is needed but the scripts don't work
+# chmod a+x %{buildroot}/usr/lib/rpm/*
 
 %files bin
 %defattr(755,root,root,-)
