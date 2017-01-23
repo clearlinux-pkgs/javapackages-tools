@@ -1,0 +1,31 @@
+From 496835af578a5aa3493ed04cdadb1698f4cf8199 Mon Sep 17 00:00:00 2001
+From: Athenas Jimenez Gonzalez <athenas.jimenez.gonzalez@intel.com>
+Date: Mon, 23 Jan 2017 21:49:31 +0000
+Subject: [PATCH] Remove dia dependency
+
+---
+ doc/Makefile | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+
+diff --git a/doc/Makefile b/doc/Makefile
+index 6a0615a..c7b5680 100644
+--- a/doc/Makefile
++++ b/doc/Makefile
+@@ -1,10 +1,11 @@
+ all: index.html
+ 
+-index.html: *.txt images/xmvn.svg
++index.html: 
++	#*.txt images/xmvn.svg
+ 	asciidoc -b html5 -a icons -a toc2 -a toclevels=3 -a theme=flask index.txt
+ 
+-%.svg: %.dia
+-	dia -e $@ $<
++#%.svg: %.dia
++#	dia -e $@ $<
+ 
+ upload-all:
+ 	rm -rf doc
+-- 
+2.11.0
+
