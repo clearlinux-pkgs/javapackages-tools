@@ -17,6 +17,7 @@ BuildRequires : six
 BuildRequires : util-linux
 BuildRequires : libxslt-bin
 BuildRequires : docbook-xml
+BuildRequires : source-highlight
 Requires : javapackages-tools-bin
 
 Patch1: timestamp.patch
