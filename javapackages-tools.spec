@@ -17,10 +17,10 @@ BuildRequires : six
 BuildRequires : util-linux
 BuildRequires : libxslt-bin
 BuildRequires : docbook-xml
-BuildRequires : dia
 Requires : javapackages-tools-bin
 
 Patch1: timestamp.patch
+Patch2: 0001-Remove-dia-dependency.patch
 
 %description
 Very short description since we have nothing to say.
@@ -37,6 +37,7 @@ bin components for the javapackages-tools package.
 %prep
 %setup -q -n javapackages-4.7.0
 %patch1 -p1
+%patch2 -p1
 
 %build
 export LANG=C
