@@ -1,6 +1,6 @@
 Name     : javapackages-tools
 Version  : 4.7.0
-Release  : 12
+Release  : 13
 URL      : https://fedorahosted.org/released/javapackages/javapackages-4.7.0.tar.xz
 Source0  : https://fedorahosted.org/released/javapackages/javapackages-4.7.0.tar.xz
 Summary  : Simple Maven project
